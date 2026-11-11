@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><title>Petualangan Sains: Misteri Magnet, Listrik, dan Teknologi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#eaf6ff;--card:#fff;--tx:#1d2b3a;--mut:#51657a;--b:#1e88e5;--y:#ffc928;--g:#43a047;--o:#fb8c00;--r:#e53935;--ln:#d5e4f2;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a2b;--card:#17283f;--tx:#eef3fb;--mut:#a9bbd0;--ln:#2a4163;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1a2b;--card:#17283f;--tx:#eef3fb;--mut:#a9bbd0;--ln:#2a4163;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 "Trebuchet MS",Verdana,sans-serif}
+header{background:linear-gradient(90deg,var(--b),var(--g));color:#fff;padding:12px 14px}
+header h1{margin:0;font-size:1.05rem}header small{opacity:.95}
+#pb{height:10px;background:rgba(255,255,255,.35);border-radius:9px;margin-top:8px;overflow:hidden}#pb i{display:block;height:100%;width:0;background:var(--y);transition:width .4s}
+nav{display:flex;gap:6px;overflow-x:auto;padding:8px;background:var(--card);border-bottom:2px solid var(--ln);position:sticky;top:0;z-index:5}
+nav button{flex:none;border:0;border-radius:20px;padding:8px 13px;background:var(--bg);color:var(--tx);font:inherit;font-size:.9rem;cursor:pointer}
+nav button.on{background:var(--o);color:#fff;font-weight:700}
+main{max-width:920px;margin:auto;padding:14px}.pg{display:none}.pg.on{display:block}
+.card{background:var(--card);border:2px solid var(--ln);border-radius:18px;padding:14px;margin:10px 0}
+h2{margin:.2em 0 .4em;color:var(--b)}h3{margin:.3em 0}
+.btn{border:0;border-radius:14px;padding:10px 16px;font:inherit;font-weight:700;color:#fff;background:var(--b);cursor:pointer;margin:3px}
+.btn.o{background:var(--o)}.btn.g{background:var(--g)}.btn.y{background:var(--y);color:#222}.btn.r{background:var(--r)}.btn:disabled{opacity:.45}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.hero{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.sci{font-size:4.5rem}
+.bub{background:var(--y);color:#222;border-radius:16px;padding:10px 14px;flex:1;min-width:220px}
+.chip{display:inline-block;background:var(--bg);border-radius:12px;padding:4px 10px;margin:3px;font-size:.95rem}
+.fact{background:rgba(255,201,40,.2);border-left:5px solid var(--y);padding:8px 10px;border-radius:8px;margin:8px 0}
+.src{font-size:.82rem;color:var(--mut)}.big{font-size:2.2rem}
+.area{position:relative;height:330px;background:repeating-linear-gradient(0deg,rgba(0,0,0,.03) 0 20px,transparent 20px 40px),#f1e1c4;border-radius:14px;overflow:hidden;touch-action:none;color:#222}
+.it{position:absolute;width:68px;text-align:center;font-size:2rem;cursor:grab;user-select:none;touch-action:none;line-height:1.1}.it small{display:block;font-size:.7rem}
+#mg{position:absolute;left:50%;top:8px;transform:translateX(-50%);font-size:2.6rem}
+.msg{min-height:3em;background:var(--bg);border-radius:12px;padding:8px 12px;margin:8px 0}
+.bar{display:flex;align-items:center;justify-content:center;height:54px;border-radius:8px;overflow:hidden;font-weight:800;color:#fff;font-size:1.3rem}
+.bar b{width:70px;height:100%;display:flex;align-items:center;justify-content:center}.U{background:var(--r)}.S{background:var(--b)}
+.row2{display:flex;align-items:center;justify-content:center;min-height:90px;overflow:hidden;background:var(--bg);border-radius:12px}
+.m2{transition:margin-left .5s}.shake{animation:sh .25s infinite}@keyframes sh{50%{transform:translateX(5px)}}
+svg{max-width:100%;height:auto}.flow{stroke-dasharray:8 10;animation:fl .7s linear infinite}@keyframes fl{to{stroke-dashoffset:-18}}
+.bulb{font-size:6rem;transition:.3s;filter:grayscale(1) brightness(.6)}.bulb.on{filter:none;text-shadow:0 0 30px var(--y);transform:scale(1.1)}
+.q{padding:10px 12px;border:2px solid var(--ln);border-radius:12px;margin:6px 0;cursor:pointer;background:var(--card);display:block;width:100%;text-align:left;font:inherit;color:var(--tx)}
+.q.sel{border-color:var(--b);background:rgba(30,136,229,.15)}.q.ok{border-color:var(--g);background:rgba(67,160,71,.2)}.q.no{border-color:var(--r);background:rgba(229,57,53,.15)}
+.nums button{width:34px;height:34px;border-radius:50%;border:2px solid var(--ln);background:var(--card);color:var(--tx);margin:2px;cursor:pointer}.nums .d{background:var(--g);color:#fff;border-color:var(--g)}.nums .c{outline:3px solid var(--o)}
+.score{text-align:center;background:linear-gradient(135deg,var(--y),var(--o));color:#222;border-radius:20px;padding:18px}.score .big{font-size:3.5rem;font-weight:800}
+#cert{border:8px double var(--o);background:#fffdf3;color:#222;text-align:center;padding:20px;border-radius:12px;margin:12px 0}#cert h2{color:#d35400}
+#toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--g);color:#fff;padding:10px 18px;border-radius:20px;opacity:0;transition:.3s;pointer-events:none;z-index:9}#toast.on{opacity:1}
+.mv{height:70px;position:relative;background:var(--bg);border-radius:12px;overflow:hidden}.mv .a,.mv .b{position:absolute;top:14px;width:70px;height:42px;border-radius:6px}.mv .a{background:linear-gradient(90deg,var(--r) 50%,var(--b) 50%);animation:ma 3s ease-in-out infinite}.mv .b{background:linear-gradient(90deg,var(--b) 50%,var(--r) 50%);animation:mb 3s ease-in-out infinite}
+@keyframes ma{0%,100%{left:5%}50%{left:34%}}@keyframes mb{0%,100%{right:5%}50%{right:34%}}
+.mv.rep .a{background:linear-gradient(90deg,var(--b) 50%,var(--r) 50%);animation:ra 3s ease-in-out infinite}.mv.rep .b{background:linear-gradient(90deg,var(--b) 50%,var(--r) 50%);animation:rb 3s ease-in-out infinite}
+@keyframes ra{0%,100%{left:34%}50%{left:5%}}@keyframes rb{0%,100%{right:34%}50%{right:5%}}
+@media print{body *{visibility:hidden}#cert,#cert *{visibility:visible}#cert{position:absolute;left:0;top:0;width:100%}}
+</style></head><body>
+<header><h1>🧲 PETUALANGAN SAINS: MISTERI MAGNET, LISTRIK, DAN TEKNOLOGI</h1><small>IPAS Kelas V SD · oleh Fredyka Elga Ariantama</small><div id="pb"><i></i></div><small id="pt"></small></header>
+<nav id="nav"></nav>
+<div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:center;padding:6px;background:var(--card)">
+<button class="btn g" onclick="say()">▶ Putar Suara</button><button class="btn y" onclick="speechSynthesis.pause()">⏸ Jeda</button><button class="btn o" onclick="speechSynthesis.resume()">⏯ Lanjut</button><button class="btn" onclick="say(1)">🔁 Ulangi</button><button class="btn r" id="mt" onclick="mute()">🔊 Suara: Hidup</button></div>
+<main>
+<section class="pg on" id="beranda"><div class="card hero"><div class="sci">🧑‍🔬</div><div class="bub narr">Halo, teman-teman! Selamat datang di Petualangan Sains. Hari ini kita akan menjelajahi dunia magnet, listrik, dan teknologi. Siap menjadi ilmuwan cilik?</div></div>
+<div class="card" style="text-align:center"><div class="big">🧲 ⚡ 🔋 💡</div><h2>Selamat Datang di Dunia Petualangan Sains</h2><p>IPAS Kelas V SD · Dibuat oleh <b>Fredyka Elga Ariantama</b></p>
+<button class="btn g" onclick="go('materi')">MULAI BELAJAR</button><button class="btn o" onclick="go('simulasi')">LIHAT SIMULASI</button><button class="btn" onclick="go('kuis')">MULAI KUIS</button></div>
+<div class="card"><h3>📖 Petunjuk Penggunaan</h3><ol><li>Baca <b>Tujuan</b> dan <b>Materi</b> 1–5.</li><li>Coba 4 <b>Simulasi</b> sendiri.</li><li>Tekan tombol suara untuk mendengarkan penjelasan (suara tidak berbunyi otomatis).</li><li>Kerjakan <b>Kuis</b> 20 soal, lalu ambil sertifikatmu!</li></ol><p class="src">Progres belajar tersimpan otomatis di perangkat ini.</p></div></section>
+
+<section class="pg" id="tujuan"><h2>🎯 Tujuan Pembelajaran</h2><p class="src">Rumusan ini disusun pengembang aplikasi, bukan kutipan langsung dari buku.</p><div class="grid narr" id="tj"></div></section>
+
+<section class="pg" id="materi"><h2>📚 Materi Pembelajaran</h2><div id="mtabs"></div><div class="card narr" id="mbody"></div></section>
+
+<section class="pg" id="simulasi"><h2>🔬 Simulasi Digital</h2><div id="stabs"></div>
+<div id="s1" class="card sim"><h3>Simulasi 1: Magnet Menarik Benda</h3><p class="narr">Seret setiap benda ke dekat magnet. Benda magnetis akan tertarik. Benda nonmagnetis tidak tertarik.</p>
+<div><button class="btn g" onclick="s1reset(1)">Mulai Percobaan</button><button class="btn o" onclick="s1reset(0)">Ulangi</button><button class="btn y" onclick="toast2('Petunjuk: seret benda sampai menempel di magnet 🧲. Coba semua 6 benda!')">Petunjuk</button></div>
+<div class="area" id="ar"><div id="mg">🧲</div></div><div class="msg" id="s1m">Tekan “Mulai Percobaan”.</div><div id="s1t" class="src"></div></div>
+
+<div id="s2" class="card sim"><h3>Simulasi 2: Kutub Magnet</h3><p class="narr">Putar magnet dan atur jaraknya. Kutub berbeda saling tarik-menarik. Kutub sama saling tolak-menolak.</p>
+<div class="row2" id="r2"><div class="bar" id="m1"></div><div class="bar m2" id="m2"></div></div>
+<div><button class="btn" onclick="flip(0)">🔄 Putar Magnet 1</button><button class="btn o" onclick="flip(1)">🔄 Putar Magnet 2</button></div>
+<label>Jarak: <input type="range" id="dist" min="20" max="200" value="160" oninput="s2()"></label><div class="msg" id="s2m"></div><div id="s2t" class="src"></div></div>
+
+<div id="s3" class="card sim"><h3>Simulasi 3: Rangkaian Listrik Sederhana</h3><p class="narr">Pasang baterai, dua kabel, lampu, dan sakelar. Lalu tekan sakelar. Lampu menyala jika rangkaian tertutup.</p>
+<div id="pal"></div>
+<svg viewBox="0 0 300 200" id="cs"><g fill="none" stroke-width="5" stroke-linecap="round"><path id="w1" d="M40,70 V40 H120 M180,40 H260 V70"/><path id="w2" d="M260,130 V160 H40 V130"/><path id="fl" d="M40,70 V40 H260 V160 H40 V130" stroke="#ffc928" stroke-width="3" style="display:none" class="flow"/></g>
+<g id="bat"><rect x="26" y="70" width="28" height="60" rx="4" fill="#43a047"/><text x="40" y="88" text-anchor="middle" fill="#fff" font-size="14">+</text><text x="40" y="122" text-anchor="middle" fill="#fff" font-size="14">−</text></g>
+<circle id="lp" cx="150" cy="40" r="26" fill="#999" stroke="#555" stroke-width="3"/><text id="lt" x="150" y="46" text-anchor="middle" font-size="16">💡</text>
+<g id="sw" stroke-width="5" stroke-linecap="round" fill="none"><circle cx="260" cy="70" r="5" fill="#333"/><circle cx="260" cy="130" r="5" fill="#333"/><line id="swl" x1="260" y1="130" x2="260" y2="70" stroke="#e53935"/></g></svg>
+<div class="msg" id="s3m"></div><p class="src">Arus digambarkan keluar dari kutub (+) baterai, melewati lampu, lalu kembali ke kutub (−).</p></div>
+
+<div id="s4" class="card sim"><h3>Simulasi 4: Lampu Menyala dan Mati</h3><p class="narr">Tekan ON agar lampu menyala. Energi listrik berubah menjadi energi cahaya dan energi panas.</p>
+<div style="text-align:center"><div class="bulb" id="bl">💡</div><div><button class="btn g" onclick="s4(1)">ON</button><button class="btn r" onclick="s4(0)">OFF</button></div></div><div class="msg" id="s4m">Tekan ON atau OFF.</div></div></section>
+
+<section class="pg" id="video"><h2>🎬 Video dan Animasi</h2><p class="src">Animasi berikut dibuat langsung di aplikasi (tanpa file video), jadi ringan di HP.</p>
+<div class="card"><h3>Magnet saling menarik</h3><div class="mv"><div class="a"></div><div class="b"></div></div><p class="narr">Dua kutub berbeda saling tarik-menarik, sehingga magnet saling mendekat.</p></div>
+<div class="card"><h3>Magnet saling menolak</h3><div class="mv rep"><div class="a"></div><div class="b"></div></div><p class="narr">Dua kutub yang sama saling tolak-menolak, sehingga magnet saling menjauh.</p></div>
+<div class="card"><h3>Aliran listrik di rangkaian tertutup</h3><svg viewBox="0 0 300 100"><rect x="20" y="15" width="260" height="70" fill="none" stroke="#ffc928" stroke-width="4" class="flow"/><rect x="10" y="40" width="20" height="20" fill="#43a047"/><text x="150" y="58" text-anchor="middle" font-size="30">💡</text></svg><p class="narr">Pada rangkaian tertutup, arus listrik mengalir dari baterai, melewati lampu, dan kembali ke baterai.</p></div>
+<div class="card"><h3>Energi listrik menjadi cahaya dan panas</h3><div style="text-align:center;font-size:2.4rem">⚡ ➜ 💡 + 🔥</div><p class="narr">Pada lampu, energi listrik berubah menjadi energi cahaya dan sedikit energi panas.</p></div></section>
+
+<section class="pg" id="kuis"><h2>📝 Kuis Interaktif</h2><div id="qb"></div></section>
+
+<section class="pg" id="kesimpulan"><h2>✅ Kesimpulan</h2><div class="card narr"><ol><li>Magnet adalah benda yang dapat menarik benda tertentu.</li><li>Magnet mempunyai dua kutub, yaitu utara dan selatan.</li><li>Kutub berbeda saling tarik-menarik. Kutub sama saling tolak-menolak.</li><li>Listrik adalah bentuk energi yang sangat bermanfaat.</li><li>Rangkaian listrik sederhana terdiri atas komponen yang saling terhubung.</li><li>Energi listrik dapat diubah menjadi energi lain.</li><li>Magnet dan listrik banyak dipakai dalam teknologi sehari-hari.</li><li>Gunakan energi listrik dengan bijak dan hemat.</li></ol><div class="big" style="text-align:center">🧲⚡💡🌱</div></div><button class="btn g" onclick="done('kes')">Selesai Belajar</button></section>
+
+<section class="pg" id="profil"><h2>👤 Profil Pembuat</h2><div class="card"><div class="sci">🧑‍💻</div><p><b>Nama:</b> Fredyka Elga Ariantama</p><p><b>Peran:</b> Pengembang Media Pembelajaran Digital</p><p><b>Proyek:</b> Aplikasi Simulasi Digital Pembelajaran IPAS Kelas V SD</p><p><b>Materi:</b> Magnet, Listrik, dan Teknologi untuk Kehidupan</p></div></section>
+
+<section class="pg" id="pustaka"><h2>📖 Daftar Pustaka</h2>
+<div class="card"><p>Ghaniem, A. F., Oktora, A. H., Wahyudi, M. J., &amp; Tresnasari, E. (2024). <i>Ilmu Pengetahuan Alam dan Sosial untuk SD/MI Kelas V (Edisi Revisi)</i>. Pusat Kurikulum dan Perbukuan. ISBN 978-623-388-160-9.<br><a href="https://buku.kemendikdasmen.go.id/katalog/ilmu-pengetahuan-alam-dan-sosial-untuk-sd-mi-kelas-v-edisi-revisi" target="_blank" rel="noopener">buku.kemendikdasmen.go.id</a></p>
+<p>Ghaniem, A. F., Oktora, A. H., Wahyudi, M. J., &amp; Tresnasari, E. (2024). <i>Panduan Guru IPAS untuk SD/MI Kelas V (Edisi Revisi)</i>. Pusat Kurikulum dan Perbukuan. ISBN 978-623-388-162-3. (Rujukan strategi dan aktivitas belajar.)<br><a href="https://buku.kemendikdasmen.go.id/katalog/panduan-guru-ilmu-pengetahuan-alam-dan-sosial-untuk-sd-mi-kelas-v-edisi-revisi" target="_blank" rel="noopener">buku.kemendikdasmen.go.id</a></p>
+<p>Sutinah, C., Mahardhika, R. L., &amp; Kartini, D. (2025). <i>Panduan Mata Pelajaran IPAS Fase B dan C</i>. Badan Standar, Kurikulum, dan Asesmen Pendidikan. (Rujukan kesesuaian capaian Fase C.)<br><a href="https://repositori.kemendikdasmen.go.id/33599/" target="_blank" rel="noopener">repositori.kemendikdasmen.go.id</a></p>
+<p>Buku IPAS Kelas V edisi 2021, Bab 3 “Magnet, Listrik, dan Teknologi untuk Kehidupan”. ISBN 978-602-244-681-1. (Edisi sebelumnya, dipakai sebagai rujukan tambahan bab magnet dan listrik.)</p></div>
+<div class="card src">Catatan kejujuran: nomor halaman tidak dicantumkan karena belum diverifikasi dari dokumen asli. Materi disusun pengembang berdasarkan topik bab tersebut, bukan kutipan langsung. Pengembang perlu mencocokkan isi dengan buku sebelum dipakai di kelas.</div></section>
+</main><div id="toast"></div>
+<script>
+var $=function(i){return document.getElementById(i)};
+var PG=[["beranda","🏠 Beranda"],["tujuan","🎯 Tujuan"],["materi","📚 Materi"],["simulasi","🔬 Simulasi"],["video","🎬 Animasi"],["kuis","📝 Kuis"],["kesimpulan","✅ Kesimpulan"],["profil","👤 Profil"],["pustaka","📖 Pustaka"]];
+var S={mat:[],sim:[],quiz:null,kes:0,name:""};
+try{var j=localStorage.getItem("ps_v1");if(j)S=Object.assign(S,JSON.parse(j))}catch(e){}
+function sv(){try{localStorage.setItem("ps_v1",JSON.stringify(S))}catch(e){}}
+function toast2(t){var e=$("toast");e.textContent=t;e.className="on";clearTimeout(toast2.t);toast2.t=setTimeout(function(){e.className=""},2600)}
+function prog(){var n=S.mat.length+S.sim.length+(S.quiz!==null?1:0);$("pb").firstChild.style.width=(n/10*100)+"%";$("pt").textContent="Progres belajar: "+n+" dari 10 langkah ("+S.mat.length+"/5 materi, "+S.sim.length+"/4 simulasi, kuis "+(S.quiz!==null?"selesai":"belum")+")"}
+function done(k){if(k==="kes"){S.kes=1;toast2("Hebat! Kamu selesai belajar 🎉");sv();return}var a=k[0]==="m"?S.mat:S.sim;if(a.indexOf(k)<0){a.push(k);toast2("Berhasil! Langkah selesai ✅");sv();prog();if(k[0]==="m")mtabs()}}
+function go(id){speechSynthesis.cancel();document.querySelectorAll(".pg").forEach(function(p){p.classList.toggle("on",p.id===id)});document.querySelectorAll("#nav button").forEach(function(b){b.classList.toggle("on",b.dataset.p===id)});scrollTo(0,0);if(id==="kuis")qrender()}
+$("nav").innerHTML=PG.map(function(p){return '<button data-p="'+p[0]+'" onclick="go(\''+p[0]+'\')">'+p[1]+'</button>'}).join("");$("nav").firstChild.className="on";
+/* suara */
+var muted=false;function mute(){muted=!muted;speechSynthesis.cancel();$("mt").textContent=muted?"🔇 Suara: Mati":"🔊 Suara: Hidup"}
+var last="";function say(r){if(muted){toast2("Suara dimatikan. Tekan tombol Suara untuk menyalakan.");return}if(!("speechSynthesis" in window)){toast2("Browser belum mendukung suara.");return}
+var el=document.querySelector(".pg.on .sim:not([style*='none']) .narr")||document.querySelector(".pg.on .narr");if(!r||!last)last=el?el.innerText:"";speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(last);u.lang="id-ID";u.rate=.9;speechSynthesis.speak(u)}
+/* tujuan */
+var TJ=["Menjelaskan pengertian magnet.","Mengidentifikasi benda yang dapat dan tidak dapat ditarik magnet.","Menjelaskan sifat kutub magnet.","Menjelaskan tarik-menarik dan tolak-menolak pada magnet.","Menjelaskan pengertian energi listrik secara sederhana.","Mengidentifikasi sumber energi listrik.","Menjelaskan fungsi komponen rangkaian listrik sederhana.","Menjelaskan perubahan energi listrik menjadi energi lain.","Mengidentifikasi pemanfaatan magnet dan listrik sehari-hari.","Menunjukkan sikap ingin tahu dan melakukan pengamatan sederhana."],TI=["🧲","🔩","🧭","↔️","⚡","🔋","🔌","💡","📻","🔍"];
+$("tj").innerHTML=TJ.map(function(t,i){return '<div class="card"><div class="big">'+TI[i]+'</div><b>Tujuan '+(i+1)+'</b><br>'+t+'</div>'}).join("");
+/* materi */
+var SRC="Rujukan: Buku Siswa IPAS Kelas V, Bab 3 “Magnet, Listrik, dan Teknologi untuk Kehidupan” (edisi 2021, ISBN 978-602-244-681-1; edisi revisi 2024 sebagai pembanding). Halaman belum diverifikasi.";
+var M=[{t:"1. Mengenal Magnet",i:"🧲",p:"Magnet adalah benda yang dapat menarik benda tertentu, terutama yang terbuat dari besi atau baja. Benda yang dapat ditarik magnet disebut benda magnetis. Benda yang tidak dapat ditarik disebut benda nonmagnetis. Magnet dipakai untuk penutup pintu lemari, mainan, dan kompas.",e:"Magnetis: 🔩 paku besi, 📎 klip kertas, 🧷 peniti (umumnya dari besi/baja). Nonmagnetis: 🪵 kayu, 🧴 plastik, 📄 kertas.",f:"Magnet kecil di pintu kulkas membuat pintu menempel rapat."},
+{t:"2. Sifat-Sifat Magnet",i:"↔️",p:"Magnet punya dua kutub, yaitu kutub utara dan kutub selatan. Kutub yang berbeda saling tarik-menarik. Kutub yang sama saling tolak-menolak. Gaya magnet dapat bekerja tanpa bersentuhan langsung. Kekuatan magnet berbeda-beda tergantung jenis dan kondisinya.",e:"Dekatkan dua magnet mainan: kadang menempel, kadang saling mendorong.",f:"Jika magnet batang dipotong, tiap potongan tetap punya dua kutub."},
+{t:"3. Mengenal Listrik",i:"⚡",p:"Energi listrik adalah energi yang membuat alat-alat di rumah dapat bekerja. Sumbernya antara lain baterai, aki, dan pembangkit listrik. Kita perlu menghemat listrik, misalnya mematikan lampu dan kipas angin jika tidak dipakai.",e:"💡 lampu, 📺 televisi, 🌀 kipas angin, 👔 setrika, 📱 telepon genggam.",f:"Telepon genggam memakai baterai yang dapat diisi ulang."},
+{t:"4. Rangkaian Listrik Sederhana",i:"🔌",p:"Rangkaian sederhana terdiri atas baterai (sumber energi), kabel (penghantar arus), lampu (alat yang memakai listrik), dan sakelar (penyambung atau pemutus arus). Pada rangkaian tertutup, arus mengalir sehingga lampu menyala. Pada rangkaian terbuka, arus terputus sehingga lampu mati.",e:"Sakelar lampu di kamar: ditekan ON rangkaian tertutup, ditekan OFF rangkaian terbuka.",f:"Coba Simulasi 3 untuk melihat arus listrik mengalir."},
+{t:"5. Teknologi dalam Kehidupan",i:"🔧",p:"Magnet dan listrik dipakai dalam banyak teknologi. Bel listrik dan pengeras suara memakai magnet dan listrik untuk menghasilkan bunyi. Kipas angin dan motor listrik mengubah energi listrik menjadi gerak. Kompas memakai magnet untuk menunjukkan arah utara dan selatan.",e:"🔔 bel listrik, 🔊 pengeras suara, 🧭 kompas, 🌀 kipas angin.",f:"Kompas dapat membantu pendaki menemukan arah."}];
+var mi=0;function mtabs(){$("mtabs").innerHTML=M.map(function(m,i){return '<button class="btn '+(i===mi?"o":"")+'" onclick="mi='+i+';mtabs()">'+(S.mat.indexOf("m"+i)>=0?"✅ ":"")+m.i+" "+(i+1)+'</button>'}).join("");var m=M[mi];
+$("mbody").innerHTML='<h3>'+m.i+' '+m.t+'</h3><p>'+m.p+'</p><div class="big">'+m.i+'</div><p><b>Contoh sehari-hari:</b> '+m.e+'</p><div class="fact">💡 <b>Fakta menarik:</b> '+m.f+'</div><p class="src">'+SRC+'</p><button class="btn g" onclick="done(\'m'+mi+'\')">Selesai Materi Ini</button>'+(mi<4?'<button class="btn" onclick="mi++;mtabs()">Materi Selanjutnya ➜</button>':'<button class="btn y" onclick="go(\'simulasi\')">Ke Simulasi ➜</button>')}
+mtabs();
+/* simulasi tabs */
+var SN=["🧲 Sim 1","🧭 Sim 2","🔌 Sim 3","💡 Sim 4"],cs=0;function stabs(){$("stabs").innerHTML=SN.map(function(n,i){return '<button class="btn '+(i===cs?"o":"")+'" onclick="cs='+i+';stabs()">'+(S.sim.indexOf("s"+i)>=0?"✅ ":"")+n+'</button>'}).join("");for(var i=0;i<4;i++)$("s"+(i+1)).style.display=i===cs?"block":"none"}
+/* sim1 */
+var IT=[["🔩","Paku besi",1],["📎","Klip kertas",1],["🧷","Peniti",1],["🪵","Kayu",0],["🧴","Plastik",0],["📄","Kertas",0]],tested={};
+function s1reset(st){tested={};var a=$("ar");a.querySelectorAll(".it").forEach(function(e){e.remove()});IT.forEach(function(it,i){var d=document.createElement("div");d.className="it";d.innerHTML=it[0]+"<small>"+it[1]+"</small>";d.style.left=(8+i*15.5)+"%";d.style.top="250px";d.dataset.i=i;a.appendChild(d);drag(d,a)});$("s1m").textContent=st?"Percobaan dimulai! Seret benda ke dekat magnet 🧲.":"Percobaan diulang. Seret benda ke dekat magnet 🧲.";$("s1t").textContent=""}
+function drag(d,a){var ox,oy,on=0;d.onpointerdown=function(e){on=1;d.setPointerCapture(e.pointerId);var r=d.getBoundingClientRect();ox=e.clientX-r.left;oy=e.clientY-r.top;d.style.transition="none";d.style.zIndex=3};
+d.onpointermove=function(e){if(!on)return;var r=a.getBoundingClientRect();d.style.left=Math.max(0,Math.min(r.width-68,e.clientX-r.left-ox))+"px";d.style.top=Math.max(0,Math.min(r.height-60,e.clientY-r.top-oy))+"px"};
+d.onpointerup=function(){if(!on)return;on=0;var it=IT[d.dataset.i],ar=a.getBoundingClientRect(),mx=ar.width/2,dx=parseFloat(d.style.left)+34-mx,dy=parseFloat(d.style.top)+30-40;
+if(Math.hypot(dx,dy)<130){tested[it[1]]=1;if(it[2]){d.style.transition="all .4s";d.style.left=(mx-34+(d.dataset.i%3-1)*22)+"px";d.style.top="62px";$("s1m").textContent="✅ "+it[1]+" tertarik magnet. Benda ini MAGNETIS karena terbuat dari besi/baja."}else{$("s1m").textContent="❌ "+it[1]+" tidak tertarik magnet. Benda ini NONMAGNETIS."}
+$("s1t").textContent="Sudah dicoba: "+Object.keys(tested).length+" dari 6 benda";if(Object.keys(tested).length===6)done("s0")}else $("s1m").textContent="Benda masih terlalu jauh dari magnet. Dekatkan lagi!"}}
+/* sim2 */
+var mg=[["S","U"],["S","U"]];function flip(i){mg[i]=[mg[i][1],mg[i][0]];s2()}
+function s2(){[0,1].forEach(function(i){$("m"+(i+1)).innerHTML='<b class="'+mg[i][0]+'">'+mg[i][0]+'</b><b class="'+mg[i][1]+'">'+mg[i][1]+'</b>'});
+var g=+$("dist").value,same=mg[0][1]===mg[1][0],m=$("m2");m.classList.remove("shake");var t;
+if(g>110){m.style.marginLeft=g+"px";t="Magnet masih terlalu jauh, gaya magnetnya lemah. Dekatkan magnetnya!"}
+else if(same){m.style.marginLeft=(g+70)+"px";m.classList.add("shake");t="🔴 Kutub yang menghadap sama ("+mg[0][1]+" dan "+mg[1][0]+"), jadi magnet TOLAK-MENOLAK."}
+else{m.style.marginLeft="4px";t="🟢 Kutub yang menghadap berbeda ("+mg[0][1]+" dan "+mg[1][0]+"), jadi magnet TARIK-MENARIK."}
+$("s2m").textContent=t;if(g<=110){s2.k=s2.k||{};s2.k[same?"r":"a"]=1;$("s2t").textContent="Sudah dicoba: tarik-menarik "+(s2.k.a?"✅":"⬜")+" · tolak-menolak "+(s2.k.r?"✅":"⬜");if(s2.k.a&&s2.k.r)done("s1")}}
+/* sim3 */
+var P={bat:0,w1:0,w2:0,lamp:0,sw:0,closed:0},PL=[["bat","🔋 Baterai"],["w1","〰 Kabel 1"],["w2","〰 Kabel 2"],["lamp","💡 Lampu"],["sw","🎚 Sakelar"]];
+function s3(){$("pal").innerHTML=PL.map(function(p){return '<button class="btn '+(P[p[0]]?"g":"")+'" onclick="P.'+p[0]+'=1-P.'+p[0]+';if(!P.sw)P.closed=0;s3()">'+(P[p[0]]?"Lepas ":"Pasang ")+p[1]+'</button>'}).join("")+'<button class="btn o" onclick="if(!P.sw){toast2(\'Pasang sakelar dulu!\');return}P.closed=1-P.closed;s3()">Tekan Sakelar ('+(P.closed?"ON":"OFF")+')</button><button class="btn y" onclick="P={bat:0,w1:0,w2:0,lamp:0,sw:0,closed:0};s3()">Ulangi</button>';
+$("bat").style.opacity=P.bat?1:.2;$("w1").style.stroke=P.w1?"#444":"#bbb";$("w1").style.strokeDasharray=P.w1?"":"4 6";$("w2").style.stroke=P.w2?"#444":"#bbb";$("w2").style.strokeDasharray=P.w2?"":"4 6";$("lp").style.opacity=P.lamp?1:.2;$("sw").style.opacity=P.sw?1:.2;
+var l=$("swl");l.setAttribute("x2",P.closed?260:225);l.setAttribute("y2",P.closed?70:75);
+var ok=P.bat&&P.w1&&P.w2&&P.lamp&&P.sw&&P.closed;$("fl").style.display=ok?"block":"none";$("lp").setAttribute("fill",ok?"#ffd83a":"#999");$("lp").style.filter=ok?"drop-shadow(0 0 12px #ffc928)":"none";
+var miss=PL.filter(function(p){return!P[p[0]]}).map(function(p){return p[1].replace(/^\S+\s/,"")});
+$("s3m").innerHTML=ok?"<b>Mengapa lampu menyala?</b> Semua komponen terpasang dan sakelar ON. Rangkaian TERTUTUP, sehingga arus listrik mengalir dari baterai ke lampu dan kembali ke baterai.":"<b>Mengapa lampu tidak menyala?</b> "+(miss.length?"Komponen belum dipasang: "+miss.join(", ")+". ":"")+(P.sw&&!P.closed?"Sakelar OFF, rangkaian TERBUKA sehingga arus terputus.":"Rangkaian belum lengkap, sehingga arus tidak mengalir.");
+if(ok)done("s2")}
+/* sim4 */
+function s4(o){$("bl").className="bulb"+(o?" on":"");$("s4m").innerHTML=o?"💡 Lampu ON. Energi listrik ➜ energi <b>cahaya</b> + energi <b>panas</b> 🔥. Lampu pijar jadi hangat.":"Lampu OFF. Tidak ada arus listrik, jadi tidak ada cahaya.";s4.k=s4.k||{};s4.k[o]=1;if(s4.k[0]&&s4.k[1])done("s3")}
+/* kuis */
+var G={a:"Magnet",b:"Sifat Magnet",c:"Listrik",d:"Rangkaian Listrik",e:"Teknologi"};
+var Q=("Benda yang dapat menarik besi disebut …|Magnet|Kabel|Baterai|Kayu|0|Magnet adalah benda yang dapat menarik benda tertentu seperti besi.|a;"+
+"Benda yang ditarik oleh magnet adalah …|Plastik|Kertas|Paku besi|Kayu|2|Paku terbuat dari besi, sehingga termasuk benda magnetis.|a;"+
+"Benda yang TIDAK ditarik magnet adalah …|Klip kertas besi|Plastik|Paku besi|Peniti besi|1|Plastik termasuk benda nonmagnetis.|a;"+
+"Benda yang dapat ditarik magnet disebut benda …|Nonmagnetis|Isolator|Magnetis|Cair|2|Benda yang dapat ditarik magnet disebut benda magnetis.|a;"+
+"Kutub-kutub magnet adalah …|Kutub merah dan hijau|Kutub utara dan selatan|Kutub depan dan belakang|Kutub atas dan bawah saja|1|Setiap magnet punya kutub utara dan kutub selatan.|b;"+
+"Kutub utara didekatkan dengan kutub selatan. Magnet akan …|Tarik-menarik|Tolak-menolak|Meledak|Tidak bereaksi|0|Kutub yang berbeda saling tarik-menarik.|b;"+
+"Kutub utara didekatkan dengan kutub utara. Magnet akan …|Tarik-menarik|Menempel|Tolak-menolak|Berubah warna|2|Kutub yang sama saling tolak-menolak.|b;"+
+"Gaya magnet dapat bekerja …|Hanya jika bersentuhan|Tanpa bersentuhan langsung|Hanya di dalam air|Hanya pada malam hari|1|Magnet dapat menarik atau menolak walaupun belum bersentuhan.|b;"+
+"Salah satu sumber energi listrik adalah …|Baterai|Batu|Kertas|Penghapus|0|Baterai menyimpan dan menyediakan energi listrik.|c;"+
+"Lampu pijar yang menyala mengubah energi listrik menjadi …|Bunyi saja|Cahaya dan panas|Gerak saja|Magnet|1|Lampu menghasilkan cahaya dan sedikit panas.|c;"+
+"Cara hemat listrik yang benar adalah …|Membiarkan lampu menyala siang hari|Mematikan lampu yang tidak dipakai|Menyalakan semua kipas|Membuka kulkas lama|1|Mematikan alat yang tidak dipakai menghemat listrik.|c;"+
+"Setrika mengubah energi listrik terutama menjadi energi …|Panas|Bunyi|Magnet|Kimia|0|Setrika menjadi panas untuk melicinkan pakaian.|c;"+
+"Komponen yang menyambung atau memutus arus listrik adalah …|Sakelar|Lampu|Baterai|Kertas|0|Sakelar dipakai untuk menghidupkan dan mematikan rangkaian.|d;"+
+"Lampu menyala jika rangkaian listrik …|Terbuka|Terputus|Tertutup|Dilepas bateraiya|2|Pada rangkaian tertutup arus dapat mengalir.|d;"+
+"Jika sakelar dibuka (OFF), lampu menjadi …|Lebih terang|Mati|Berubah jadi baterai|Menyala biru|1|Rangkaian terbuka, arus terputus, lampu mati.|d;"+
+"Fungsi baterai dalam rangkaian adalah …|Penghantar arus|Sumber energi listrik|Penyambung|Pemutus saja|1|Baterai menyediakan energi listrik untuk rangkaian.|d;"+
+"Kipas angin mengubah energi listrik menjadi energi …|Gerak|Cahaya saja|Magnet saja|Makanan|0|Motor listrik di kipas membuat baling-baling bergerak.|e;"+
+"Alat yang memakai magnet dan listrik untuk menghasilkan bunyi adalah …|Gunting|Pengeras suara|Penggaris|Sapu|1|Pengeras suara memakai magnet dan listrik untuk menghasilkan bunyi.|e;"+
+"Kompas menggunakan magnet untuk menunjukkan arah …|Hujan|Utara dan selatan|Waktu|Suhu|1|Jarum kompas adalah magnet kecil yang menunjuk arah utara-selatan.|e;"+
+"Kabel dalam rangkaian listrik berfungsi untuk …|Menghantarkan arus listrik|Menghasilkan cahaya|Menyimpan air|Menarik besi|0|Kabel menghubungkan komponen dan menghantarkan arus.|d").split(";").map(function(s){var a=s.split("|");return{q:a[0],o:a.slice(1,5),k:+a[5],x:a[6],g:a[7]}});
+var A=[],cur=0,fin=0;function qinit(){A=S.lastA&&S.lastA.length===20?S.lastA.slice():[];if(!A.length||!S.quiz===null)A=Array(20).fill(null)}
+Array(1);A=Array(20).fill(null);
+function qrender(){var b=$("qb");if(fin){return}var q=Q[cur],n=A.filter(function(x){return x!==null}).length;
+b.innerHTML='<div class="card nums">'+Q.map(function(_,i){return '<button class="'+(A[i]!==null?"d ":"")+(i===cur?"c":"")+'" onclick="cur='+i+';qrender()">'+(i+1)+'</button>'}).join("")+'<div class="src">Terjawab '+n+' dari 20</div></div><div class="card narr"><b>Soal '+(cur+1)+' dari 20</b> <span class="chip">'+G[q.g]+'</span><p>'+q.q+'</p></div>'+q.o.map(function(o,i){return '<button class="q '+(A[cur]===i?"sel":"")+'" onclick="A[cur]='+i+';qrender()"><b>'+"ABCD"[i]+'.</b> '+o+'</button>'}).join("")+'<div><button class="btn" '+(cur?"":"disabled")+' onclick="cur--;qrender()">⬅ Sebelumnya</button><button class="btn" '+(cur<19?"":"disabled")+' onclick="cur++;qrender()">Berikutnya ➡</button><button class="btn g" '+(n===20?"":"disabled")+' onclick="finish()">Selesai &amp; Lihat Nilai</button></div><p class="src">Sumber materi kelompok soal: '+G[q.g]+' (lihat Materi dan Daftar Pustaka).</p>'}
+function cat(n){return n>=90?"Hebat Sekali!":n>=80?"Sangat Baik!":n>=70?"Baik!":n>=60?"Tetap Semangat!":"Ayo Belajar Lagi!"}
+function finish(){fin=1;var c=0;A.forEach(function(a,i){if(a===Q[i].k)c++});var n=c/20*100;S.quiz=n;sv();prog();toast2("Kuis selesai! 🎉");
+$("qb").innerHTML='<div class="score"><div>Kartu Nilai</div><div class="big">'+n+'</div><b>'+cat(n)+'</b><p>Benar: '+c+' · Salah: '+(20-c)+' · Poin: '+(c*5)+' dari 100<br>Nilai = ('+c+' / 20) × 100</p></div>'+
+'<div class="card"><h3>🎓 Sertifikat</h3><label>Nama kamu: <input id="nm" value="'+(S.name||"").replace(/"/g,"")+'" oninput="S.name=this.value;sv();$(\'cn\').textContent=this.value||\'………………\'" placeholder="Tulis namamu" style="padding:8px;font:inherit;border-radius:8px;border:2px solid var(--ln)"></label>'+
+'<div id="cert"><h2>SERTIFIKAT PETUALANGAN SAINS</h2><p>Diberikan kepada</p><h1 id="cn" style="margin:.2em">'+(S.name||"………………")+'</h1><p>telah menyelesaikan kuis materi <b>Magnet, Listrik, dan Teknologi</b><br>Kelas V SD · Nilai akhir: <b>'+n+'</b> ('+cat(n)+')</p><p>Tanggal: '+new Date().toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"})+'</p><p>Pembuat aplikasi:<br><i style="font-size:1.4rem">Fredyka Elga Ariantama</i></p></div>'+
+'<button class="btn g" onclick="toast2(\'Pada jendela cetak, pilih Simpan sebagai PDF\');setTimeout(print,600)">Unduh Sertifikat PDF</button><button class="btn o" onclick="print()">Cetak Sertifikat</button><button class="btn" onclick="fin=0;A=Array(20).fill(null);cur=0;qrender()">Ulangi Kuis</button></div>'+
+Q.map(function(q,i){var ok=A[i]===q.k;return '<div class="card"><b>'+(ok?"✅":"❌")+' Soal '+(i+1)+'.</b> '+q.q+'<br>Jawabanmu: '+q.o[A[i]]+(ok?"":'<br>Jawaban benar: <b>'+q.o[q.k]+'</b>')+'<br><span class="src">Pembahasan: '+q.x+' (Materi: '+G[q.g]+')</span></div>'}).join("")}
+prog();stabs();s1reset(1);$("s1m").textContent="Tekan “Mulai Percobaan”.";s2();s3();
+</script></body></html>
